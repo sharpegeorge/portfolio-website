@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>George Sharpe - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            lightbg: '#d2e7d6',
+            darkbg: '#435342',
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    a.project {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a.project:hover {
+        text-decoration: underline;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      filter: invert(0%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .icon {
+        filter: invert(100%);
+      }
+    }
+  </style>
+</head>
+<body class="bg-lightbg dark:bg-darkbg text-black dark:text-white min-h-screen flex items-center justify-center px-4">
+  <div class="w-full max-w-md">
+    
+    <!-- Header with name and icons -->
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold">George Sharpe</h1>
+      <div class="flex gap-4 items-center">
+        <a href="https://github.com/sharpegeorge" target="_blank" aria-label="GitHub">
+          <img src="assets/github.png" alt="GitHub" class="icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/george-sharpe/" target="_blank" aria-label="LinkedIn">
+          <img src="assets/linkedin.png" alt="LinkedIn" class="icon" />
+        </a>
+      </div>
+    </div>
+
+    <hr class="mb-6 border-t border-current" />
+
+    <!-- Dropdown List -->
+    <div class="space-y-4 text-left text-lg font-medium">
+
+      <!-- About Me -->
+      <div>
+        <button onclick="toggle('about')" class="flex items-center gap-2 w-full text-left">
+          <span id="arrow-about">▶</span> About Me
+        </button>
+        <div id="content-about" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
+          Aspiring Data Engineer with a strong interest in building systems made to last through good design principles.
+          <br><br>
+          Outside of tech, I spend my time painting with acrylics, lifting weights, and watching football. 
+        </div>
+      </div>
+
+        <!-- CV -->
+      <div>
+        <button onclick="toggle('cv')" class="flex items-center gap-2 w-full text-left">
+          <span id="arrow-cv">▶</span> CV
+        </button>
+        <div id="content-cv" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
+          <!-- PDF embed -->
+          <object data="assets/cv.pdf" type="application/pdf" width="100%" height="400px">
+            <p>Your browser does not support PDFs.
+              <a href="assets/cv.pdf" download>Download the CV here.</a>
+            </p>
+          </object>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div>
+        <button onclick="toggle('projects')" class="flex items-center gap-2 w-full text-left">
+          <span id="arrow-projects">▶</span> Projects
+        </button>
+        <div id="content-projects" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
+          <ul class="list-disc list-inside" style="list-style-type: none;">
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                Diss
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                HPC
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                Enterprise computing
+              </a></li>
+            
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                Learning from data
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                Graphics
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                Nature inspired
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/MLPClassificationModel" target="_blank" class="project">
+                MLP Classifier - Credit Card Default Prediction
+              </a></li>
+              
+              <li><a href="https://github.com/sharpegeorge/killerSudokuSolver" target="_blank" class="project">
+                Matrix-based Killer Sudoku Solver
+              </a></li>
+
+              <li><a href="https://github.com/sharpegeorge/AquaWeatherApp" target="_blank" class="project">
+                Aqua Weather App
+              </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div>
+        <button onclick="toggle('skills')" class="flex items-center gap-2 w-full text-left">
+          <span id="arrow-skills">▶</span> Skills
+        </button>
+        <div id="content-skills" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
+            <ul>
+                <li>Python, Java, SQL</li>
+                <li>Apache Spark & Airflow</li>
+                <li>Microsoft Azure, Git, Linux CLI</li>
+            </ul>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <button onclick="toggle('contact')" class="flex items-center gap-2 w-full text-left">
+          <span id="arrow-contact">▶</span> Contact
+        </button>
+        <div id="content-contact" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
+          georgeasharpe@gmail.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const content = document.getElementById(`content-${id}`);
+      const arrow = document.getElementById(`arrow-${id}`);
+      const isHidden = content.classList.contains("hidden");
+      content.classList.toggle("hidden");
+      arrow.textContent = isHidden ? "▼" : "▶";
+    }
+  </script>
+</body>
+</html>
