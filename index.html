@@ -66,7 +66,7 @@
       <!-- About Me -->
       <div>
         <button onclick="toggle('about')" class="flex items-center gap-2 w-full text-left">
-          <span id="arrow-about">▶</span> About Me
+          <span id="arrow-about">▸</span> About Me
         </button>
         <div id="content-about" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
           Aspiring Data Engineer with a strong interest in building systems made to last through good design principles.
@@ -78,7 +78,7 @@
         <!-- CV -->
       <div>
         <button onclick="toggle('cv')" class="flex items-center gap-2 w-full text-left">
-          <span id="arrow-cv">▶</span> CV
+          <span id="arrow-cv">▸</span> CV
         </button>
         <div id="content-cv" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
           <!-- PDF embed -->
@@ -93,7 +93,7 @@
       <!-- Projects -->
       <div>
         <button onclick="toggle('projects')" class="flex items-center gap-2 w-full text-left">
-          <span id="arrow-projects">▶</span> Projects
+          <span id="arrow-projects">▸</span> Projects
         </button>
         <div id="content-projects" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
           <ul class="list-disc list-inside" style="list-style-type: none;">
@@ -140,7 +140,7 @@
       <!-- Skills -->
       <div>
         <button onclick="toggle('skills')" class="flex items-center gap-2 w-full text-left">
-          <span id="arrow-skills">▶</span> Skills
+          <span id="arrow-skills">▸</span> Skills
         </button>
         <div id="content-skills" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
             <ul>
@@ -154,7 +154,7 @@
       <!-- Contact -->
       <div>
         <button onclick="toggle('contact')" class="flex items-center gap-2 w-full text-left">
-          <span id="arrow-contact">▶</span> Contact
+          <span id="arrow-contact">▸</span> Contact
         </button>
         <div id="content-contact" class="ml-6 mt-1 hidden text-base text-gray-800 dark:text-gray-200">
           georgeasharpe@gmail.com
@@ -169,7 +169,7 @@
       const arrow = document.getElementById(`arrow-${id}`);
       const isHidden = content.classList.contains("hidden");
       content.classList.toggle("hidden");
-      arrow.textContent = isHidden ? "▼" : "▶";
+      arrow.textContent = isHidden ? "▾" : "▸";
     }
   </script>
 </body>
